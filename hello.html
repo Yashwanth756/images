@@ -3,274 +3,146 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Computer Networks: Broadcast & Multicast Routing</title>
+    <title>Unit-5: Application Layer - Computer Networks</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body {
-            font-family: "Georgia", "Times New Roman", serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            color: #333;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f9f9f9;
         }
-        
-        h2 {
-            color: #2c3e50;
-            border-bottom: 2px solid #ddd;
-            padding-bottom: 10px;
-            margin-top: 40px;
-        }
-
-        h3 {
-            color: #444;
-            font-weight: bold;
-            margin-top: 25px;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 5px;
-        }
-
-        .question-block {
-            background-color: #fff;
-            padding: 25px;
-            margin-bottom: 30px;
-            border: 1px solid #ddd;
+        .diagram-container {
+            border: 2px solid #e2e8f0;
             border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            /* Prevents the block from being split across pages when printing */
-            break-inside: avoid;
-            page-break-inside: avoid;
-        }
-
-        .question-title {
-            font-family: "Arial", sans-serif;
-            font-weight: bold;
-            font-size: 1.1em;
-            color: #d35400;
-            margin-bottom: 15px;
-        }
-
-        ul, ol {
-            margin-left: 20px;
-        }
-
-        li {
-            margin-bottom: 10px;
-        }
-
-        .figure-placeholder {
-            background-color: #eef2f5;
-            border: 2px dashed #bdc3c7;
             padding: 20px;
-            text-align: center;
+            background-color: #f8fafc;
             margin: 20px 0;
-            color: #7f8c8d;
-            font-style: italic;
-            break-inside: avoid;
-        }
-
-        h4 {
-            color: #2c3e50;
-            margin-top: 20px;
-            margin-bottom: 10px;
-        }
-
-        footer {
-            margin-top: 50px;
-            font-size: 0.85em;
-            color: #777;
             text-align: center;
-            border-top: 1px solid #ddd;
-            padding-top: 20px;
         }
-
-        /* Print Specific Styles */
-        @media print {
-            body {
-                background-color: white;
-                padding: 0;
-                max-width: 100%;
-            }
-            .question-block {
-                box-shadow: none;
-                border: 1px solid #ccc;
-                margin-bottom: 20px;
-                padding: 15px;
-                break-inside: avoid;
-            }
-            .figure-placeholder {
-                background-color: #f0f0f0 !important;
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-            }
-            .question-title {
-                color: black;
-            }
-            h3 {
-                color: black;
-                border-bottom: 1px solid #333;
-            }
+        .flow-box {
+            border: 1px solid #64748b;
+            padding: 8px 12px;
+            display: inline-block;
+            background: white;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+        .arrow {
+            margin: 0 10px;
+            font-weight: bold;
         }
     </style>
 </head>
-<body>
+<body class="bg-gray-50 text-gray-800 antialiased p-4 md:p-8">
 
-<!-- Section: Broadcast Routing -->
-<div class="question-block">
-    <div class="question-title">Q11. Discuss the different algorithms for broadcast routing and compare them.</div>
-    
-    <h3>Broadcast, Multicast</h3>
-    
-    <p><strong>Answer:</strong></p>
-    
-    <h3>Broadcast Routing</h3>
-    <p>The process of sending a packet to all the nodes on the network at a single instance of time is called broadcasting. The algorithms used for broadcasting are called broadcast routing.</p>
-    
-    <p>Various methods for broadcast routing are:</p>
-    <ol>
-        <li>Distinct point-to-point routing</li>
-        <li>Flooding</li>
-        <li>Multi-destination routing</li>
-        <li>Use of spanning tree</li>
-        <li>Reverse path forwarding</li>
-    </ol>
+    <div class="max-w-4xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden p-6 md:p-10">
+        <header class="border-b-2 border-blue-600 pb-4 mb-8">
+            <h1 class="text-3xl font-bold text-blue-900">UNIT-5: Application Layer</h1>
+            <p class="text-sm font-semibold text-gray-500 mt-1">COMPUTER NETWORKS | JNTU-HYDERABAD</p>
+        </header>
 
-    <h4>1. Distinct Point-to-Point Routing</h4>
-    <p>This is the simplest method for broadcasting. In this method a sender sends a distinct packet to all the nodes in the network. Thus it takes no special features of the subnet. This method is not desirable due to two reasons. First, the source must know a list of all destinations. Second, the bandwidth is wasted.</p>
+        <!-- Streaming Section -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold text-red-700 mb-6 border-b pb-2">Q24. Explain about streaming stored audio/video.</h2>
+            <div class="mb-6">
+                <h3 class="font-bold text-lg mb-2">Streaming Stored Audio and Video</h3>
+                <p>
+                    Downloading the files of streaming stored audio/video from a web server is different compared to downloading other kinds of files. Two of the approaches for downloading these files are as follows:
+                </p>
+            </div>
 
-    <h4>2. Flooding</h4>
-    <p>Flooding algorithm send a packet on every outgoing line except the line on which it arrived. It has the same drawbacks of point-to-point algorithm. It generates too many duplicate packets and requires more bandwidth.</p>
+            <!-- Approach 1 -->
+            <div class="mb-10">
+                <h4 class="font-bold text-blue-800 mb-2">1. Using a Web Server</h4>
+                <p class="mb-4">
+                    This is a simple technique where streaming is not required. A compressed audio/video file is downloaded as a text file in the following manner:
+                </p>
+                <ol class="list-[lower-alpha] pl-8 space-y-2 mb-6">
+                    <li>The client utilizes HTTP services to send a GET message for downloading the file.</li>
+                    <li>The compressed file is forwarded to the client by the web server.</li>
+                    <li>The client takes help of a media player to play the file.</li>
+                </ol>
 
-    <h4>3. Multi-destination Routing</h4>
-    <p>In multi-destination routing a packet holds a list of destinations or a bit map of desired destinations. When a router receives a packet for broadcasting, it decides the number of output lines that are needed by examining each destination. An output line is required if it contains an optimum route to at least one of the destinations. New copies of packets are created for each output line. The packet includes the list of destinations that can use the line.</p>
+                <div class="diagram-container">
+                    <p class="font-bold mb-4">Figure (1): Using a Web Server</p>
+                    <div class="flex flex-col md:flex-row items-center justify-center gap-4">
+                        <div class="flex flex-col items-center">
+                            <div class="flow-box">Client Machine (Browser)</div>
+                            <div class="text-xs mt-2">1. GET audio/video file</div>
+                        </div>
+                        <div class="arrow">⟷</div>
+                        <div class="flex flex-col items-center">
+                            <div class="flow-box">Server Machine</div>
+                            <div class="text-xs mt-2">2. Response: video file</div>
+                        </div>
+                        <div class="arrow">→</div>
+                        <div class="flex flex-col items-center">
+                            <div class="flow-box">Media Player</div>
+                        </div>
+                    </div>
+                </div>
 
-    <h4>4. Use of Spanning Tree</h4>
-    <p>Another method of broadcasting is to use the sink tree for the router willing to broadcast a packet or to use the spanning tree.</p>
-    <p>A spanning tree is a tree that includes all the routers of the subnet but without any loops. If each router knows which of it is included in the spanning tree then it can broadcast the incoming packet on all the lines of the spanning tree except the line it arrived on. This requires minimum number of packets to be generated and the bandwidth is also efficiently utilized.</p>
-    <p>The problem with this method is that each router must know a spanning tree useful for it. With link state routing, a router has this information but with distance vector routing this information is not available.</p>
+                <div class="bg-yellow-50 p-4 border-l-4 border-yellow-400">
+                    <p class="font-bold mb-1">Drawbacks:</p>
+                    <ul class="list-disc pl-5">
+                        <li>Consumes more memory.</li>
+                        <li>The compressed audio/video file is huge which is larger than the audio file.</li>
+                        <li>Requires completely downloaded file before it can be played.</li>
+                    </ul>
+                </div>
+            </div>
 
-    <h4>5. Reverse Path Forwarding</h4>
-    <p>In reverse path forwarding algorithm, a router that receives a packet for broadcasting checks the line the packet arrived on. If the packet arrived on the same line that is normally used for sending packets to the sender of the broadcast packet then it forwards the duplicates of packet onto all the lines except the one it arrived on. Packets are routed in reverse direction because the router assumes that the packet itself followed the best route from the sender. If packet arrived on a line other than the line preferred for sending packets to the sender then the packet is discarded assuming that it is duplicate.</p>
+            <!-- Approach 2 -->
+            <div class="mb-6">
+                <h4 class="font-bold text-blue-800 mb-2">2. Using RTSP (Real-Time Streaming Protocol)</h4>
+                <p class="mb-4">
+                    To improve the streaming process, a control protocol named Real-Time Streaming Protocol (RTSP) is utilized which controls the playing of audio/video. RTSP is an out-of-band protocol that is equivalent to the second connection which is FTP. Following steps are involved in this technique:
+                </p>
+                <ol class="list-decimal pl-8 space-y-2 mb-6">
+                    <li>HTTP client requests for the web server for the metafile using a GET message.</li>
+                    <li>The web server responds with information about the metafile.</li>
+                    <li>Metafile is forwarded to the media player, which sends a SET UP message to establish a connection with the media server.</li>
+                    <li>The media server replies.</li>
+                    <li>A PLAY message is sent by the media player to start playing or downloading.</li>
+                    <li>Downloading of audio/video file is done through a protocol that runs over UDP.</li>
+                    <li>TEARDOWN message is sent to the media player to terminate the connection.</li>
+                    <li>The media server replies.</li>
+                </ol>
+                <p class="mb-6 bg-gray-100 p-3 rounded">
+                    Media player can also send other messages like, a <strong>PAUSE</strong> message that stops the downloading for sometime and can be resumed with a <strong>PLAY</strong> message later.
+                </p>
 
-    <div class="figure-placeholder">
-        [Diagram Representation]<br>
-        <img 
-  src="https://drive.google.com/file/d/1xU-veISKnmkPL11bGdYqOF5TKHtzMMOO/view?usp=drive_link" 
-  alt="My Drive Image"
-  width="300"
-/>
-
-        <strong>Figure (a): Subnet</strong> - Shows a network web of nodes (1 through 15) connected by lines.<br>
-        <strong>Figure (b): Spanning Tree for Subnet</strong> - Shows the same nodes arranged in a tree structure without loops.<br>
-        <strong>Figure (c): Working of Reverse Path Forwarding</strong> - Shows a hierarchical tree structure starting from node 14.
+                <div class="diagram-container">
+                    <p class="font-bold mb-4">Figure (2): Using Media Server and RTSP</p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
+                        <div class="text-center">
+                            <p class="font-bold text-xs mb-2">Client Machine</p>
+                            <div class="flow-box mb-2">Browser</div>
+                            <div class="flow-box">Media Player</div>
+                        </div>
+                        <div class="flex flex-col justify-center text-[10px] italic py-4">
+                            <div>(1) GET metafile ⟶</div>
+                            <div>⟵ (2) Response (metafile info)</div>
+                            <div>(3) SET UP ⟶</div>
+                            <div>⟵ (4) Response</div>
+                            <div>(5) PLAY ⟶</div>
+                            <div>(6) Media Stream (UDP) ⟶</div>
+                            <div>(7) TEARDOWN ⟶</div>
+                            <div>⟵ (8) Response</div>
+                        </div>
+                        <div class="text-center">
+                            <p class="font-bold text-xs mb-2">Server Machine</p>
+                            <div class="flow-box mb-2">Web Server</div>
+                            <div class="flow-box">Media Server</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
 
-    <p>The algorithm can be illustrated with an example subnet shown in figure (a).</p>
-
-    <p>In the beginning at the first hop, router 14 sends the packets to routers 6, 8, 11 and 13. Each of these packets follow the preferred line to 14. So they are marked by filling the circle. At the second hop, each router that received packets in first hop generates two packets, for a total of eight packets are generated in this hop. All eight packets arrive on previously unvisited routers but only five follow the preferred path. At third hop six packets are generated out of which only three arrive on the preferred line. All other packets are discarded as they are duplicates.</p>
-    
-    <p>The broadcasting stops after 5 hops and 23 packets. This is better than 4 hops and 14 packets which were needed if sink tree is followed exactly.</p>
-
-    <h4>Advantages of Reverse Path Forwarding</h4>
-    <ol>
-        <li>The reverse path forwarding is an efficient and easy to implement broadcast routing.</li>
-        <li>The routers need not have knowledge of spanning trees.</li>
-        <li>Unlike multi-destination routing, it does not have the overhead of a list of destinations or a bit map.</li>
-        <li>Unlike flooding, it does not require a mechanism to stop the broadcasting process.</li>
-    </ol>
-</div>
-
-<!-- Section: Multicast Routing -->
-<div class="question-block">
-    <div class="question-title">Q12. Explain multicast routing in detail.</div>
-    
-    <p><strong>Answer:</strong></p>
-    <h3>Multicast Routing Algorithm</h3>
-    <p>Sending a message to multiple receivers with a single send operation is called multicasting. To achieve multicasting, multiple receivers who are interested in receiving a multicast packet form a group that receives the packets. The members of a group may join or leave a group. When a process joins a particular group, it informs about its membership to its host. The routers learn about group membership of their hosts in two ways.</p>
-    <ol>
-        <li>Host inform to their routers.</li>
-        <li>Routers get this information by asking their host periodically.</li>
-    </ol>
-
-    <p>The algorithm used for multicasting is called multicast routing. It works as follows,</p>
-    <ol type="i">
-        <li>Each router builds a spanning tree that includes all other routers in a subnet. Some hosts attached to a router may belong to more than one group.</li>
-        <li>When a process sends a packet to be received by a multicast group say A, then the first router in a subnet examines its spanning tree and removes all the links that don't belong to A. This is called pruning a spanning tree.</li>
-        <li>Multicast packets are then routed only on the links of the appropriate spanning tree.</li>
-    </ol>
-
-    <p>The simplest way of pruning the spanning tree is possible with the use of link state routing. Here each router is aware of the complete topology of a subnet. Thus, they know the group membership of their hosts. Pruning is done by moving from end of each path to the root of the spanning tree and removing all the links to routers that don't lead to hosts that are members of the group.</p>
-    
-    <p>Another way of pruning is to use distance vector routing which uses reverse path forwarding algorithm. In this method, a router responds to a multicast message for a particular group with a prune message in the following cases,</p>
-    <ol type="a">
-        <li>When the hosts of a router are not interested in that group and that router is not connected to other routers.</li>
-        <li>When a router has no group membership.</li>
-    </ol>
-    <p>The prune message tells the sender not to send any more multicast messages for that group to the sending router. This method recursively prunes the subnet.</p>
-
-    <h4>Example</h4>
-    <p>Consider a subnet shown in figure (1): It has two groups, group A and group B.</p>
-    
-    <div class="figure-placeholder">
-        [Diagram Representation]<br>
-        <strong>Figure (1): Subnet with Two Groups</strong> - Shows nodes with labels indicating if they belong to Group A, Group B, or both (A, B).
-    </div>
-    
-    <p>Figure (2) shows the spanning tree for the left most router.</p>
-    <div class="figure-placeholder">
-        [Diagram Representation]<br>
-        <strong>Figure (2): Spanning Tree for Leftmost Router</strong>
-    </div>
-
-    <p>When process sends a packet to be received by the members of group A then the first router creates the spanning tree for this group as shown in figure (3) and forwards the packets on this spanning tree.</p>
-    <div class="figure-placeholder">
-        [Diagram Representation]<br>
-        <strong>Figure (3): Spanning Tree for Group A</strong>
-    </div>
-
-    <h4>Merits</h4>
-    <ol>
-        <li>Multicast routing is the best way to send messages to well defined large sized groups. The size must be small compared to the size of network.</li>
-        <li>It is useful in applications which require independent processes to work in collaboration with each other. For example, a group of processes that implement a distributed database.</li>
-        <li>It is useful more in situations when a single process needs to send a message to all other members of a group.</li>
-    </ol>
-
-    <h4>Limitation</h4>
-    <p>Multicast routing algorithm is not suitable for large networks because the storage requirements needed to store all the trees is considerably high. For example, a network with 'n' groups each with an average of members needs a storage for 'mn' trees, where 'm' is the number of pruned spanning trees to be stored for each group.</p>
-
-    <h4>Applications of Multicasting</h4>
-    <p>The applications of multicasting are as follows,</p>
-    <ol type="i">
-        <li><strong>Accessing of Distributed Databases:</strong> Usually the information in distributed databases are stored at multiple locations and accessing these locations requires the knowledge of the information storage. In such situation, whenever a user make a request, it is multicasted to all the storage location in the distributed database.</li>
-        <li><strong>News and Information Dissemination:</strong> News and the information sent by many business organizations to their customers are multicasted because a single message need to be delivered to most of the people. Example is, the delivery of any software update to all the purchasers of that particular software package.</li>
-        <li><strong>Teleconferencing:</strong> Teleconferencing involves the use of multicasting as the same information has to be simultaneously delivered to all the people who are currently attending teleconferencing. For this temporary and permanent groups are formed among the people.</li>
-        <li><strong>Distance Learning:</strong> Multicasting is also used in distance learning where the lecture delivered by a single professor can be received by a group of students residing at different places. This is useful for those students who finds difficulty in attending campus classes.</li>
-    </ol>
-</div>
-
-<!-- Section: Broadcasting vs Multicasting -->
-<div class="question-block">
-    <div class="question-title">Q13. Differentiate between broadcasting and multicasting.</div>
-    <p><strong>Answer:</strong></p>
-    <h4>Broadcasting</h4>
-    <ul>
-        <li>The process of sending a packet to all the destinations connected to a network is called broadcasting.</li>
-        <li>A network interface card accepts each incoming broadcast packet and passes it to the operating system. The CPU handles each packet. It decides whether to accept the packet or reject the packet.</li>
-        <li>Broadcasting is useful in applications such as distributing weather reports, stock market updates, live radio programs and TV broadcast.</li>
-    </ul>
-
-    <h4>Multicasting</h4>
-    <ul>
-        <li>The process of sending a packet to all the members of a multicast group is called multicasting. In multicasting, all those destinations interested in receiving multicast packet join a multicast group.</li>
-        <li>In multicasting the NIC handles each packet instead of the CPU. The CPU is used only to configure the NIC.</li>
-        <li>The NIC contains a list of multicast addresses that it can accept. The NIC accepts a packet if it matches any of the specified multicast addresses, the station's unicast address or the broadcast address. Otherwise, the NIC rejects the packet.</li>
-        <li>Multicasting is useful in applications such as distributed database systems, video conferences, distance learning and resource location.</li>
-    </ul>
-</div>
-
-<footer>
-    <p><strong>Note:</strong> Diagrams referenced in the text (Figure a, b, c, 1, 2, 3) are described within placeholders as they appear in the original textbook images.</p>
-</footer>
+    <footer class="max-w-4xl mx-auto mt-8 text-center text-gray-500 text-xs pb-10">
+        <p>&copy; Spectrum All-In-One Journal | Educational Purposes Only</p>
+    </footer>
 
 </body>
 </html>
